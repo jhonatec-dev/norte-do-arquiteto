@@ -43,29 +43,42 @@ body {
 }
 
 h1 {
-  font-family: 'Text Me One', sans-serif;
-  font-size: 6rem;
-  line-height: .9;
+  font-family: 'Text Me One', sans-serif !important;
+  font-size: 4.5rem !important;
+  line-height: .9 !important;
 }
 
-h2{
-  font-family: 'Carisma-400', sans-serif;
-  font-size: 3rem;
-  line-height: .75;
+h2 {
+  font-family: 'Carisma-400', sans-serif !important;
+  font-size: 3rem !important;
+  line-height: .75 !important;
 }
 
 h3 {
-  font-family: 'Carisma-400', 'Times New Roman', sans-serif;
-  font-size: 2rem;
-  line-height: 1;
+  font-family: 'Carisma-400', sans-serif !important;
+  font-size: 1.75rem !important;
+  line-height: 1 !important;
 }
 
-p{
-  font-family: 'Carisma-600', sans-serif;
+p {
+  font-family: 'Carisma-600', sans-serif !important;
+  font-size: 1.2rem !important;
+  line-height: 1.4 !important;
+}
+
+.Header {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 100;
 }
 
 .ananda-color {
-  /* border-radius: 50% 0 0 0; */
   border-radius: 10px;
   width: 300px;
   height: 400px;
@@ -93,9 +106,9 @@ p{
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) grayscale(0%);
 }
 
-.ananda-no-color:active {
+/* .ananda-no-color:active {
   pointer-events: none;
-}
+} */
 
 .btn-primary {
   background-color: var(--font-color);
@@ -105,19 +118,20 @@ p{
   background-color: var(--font-color-light);
 }
 
-.font-light{
+.font-light {
   color: var(--font-color-light);
+  /* display: block; */
 }
 
-.align-self-start{
+.align-self-start {
   align-self: flex-start;
 }
 
-.align-self-end{
+.align-self-end {
   align-self: flex-end;
 }
 
-.About p{
+.About p {
   font-size: 1.1rem;
   /* white-space: pre-wrap; */
   width: inherit;
@@ -126,8 +140,8 @@ p{
 }
 
 @media screen and (min-width: 768px) {
-  h3{
+  h3 {
     font-size: 1.5rem;
   }
-  
+
 }

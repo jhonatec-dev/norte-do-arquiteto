@@ -1,16 +1,14 @@
 import About from '@/components/About'
-import First from '@/components/First'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Header from '@/components/Header'
+import Jobs from '@/components/Jobs'
+import { Stack } from '@mui/material'
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col gap-8 items-center justify-between py-12 ${inter.className} `}
-    >
-      <First />
+    <Stack minWidth={"100vw"} spacing={4}>
+      <Header />
       <About />
-    </main>
+      <Jobs />
+    </Stack>
   )
 }
