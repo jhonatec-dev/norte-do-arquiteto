@@ -48,18 +48,34 @@ h1 {
   line-height: .9;
 }
 
+h2{
+  font-family: 'Carisma-400', sans-serif;
+  font-size: 3rem;
+  line-height: .75;
+}
+
 h3 {
   font-family: 'Carisma-400', 'Times New Roman', sans-serif;
   font-size: 2rem;
   line-height: 1;
 }
 
-.ananda-color {
-  border-radius: 50% 50% 0 0;
-  width: 400px;
-  height: 500px;
-  object-fit: cover;
+p{
+  font-family: 'Carisma-600', sans-serif;
 }
+
+.ananda-color {
+  /* border-radius: 50% 0 0 0; */
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  clip-path: ellipse(80% 100% at bottom);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
 
 .ananda-no-color {
   /* border-radius: 50% 0 0 0; */
@@ -87,6 +103,26 @@ h3 {
 
 .btn-primary:hover {
   background-color: var(--font-color-light);
+}
+
+.font-light{
+  color: var(--font-color-light);
+}
+
+.align-self-start{
+  align-self: flex-start;
+}
+
+.align-self-end{
+  align-self: flex-end;
+}
+
+.About p{
+  font-size: 1.1rem;
+  /* white-space: pre-wrap; */
+  width: inherit;
+  line-height: 1.125;
+  text-align: initial;
 }
 
 @media screen and (min-width: 768px) {
