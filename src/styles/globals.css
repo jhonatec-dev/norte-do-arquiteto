@@ -1,7 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('/assets/fonts/TextMeOne.woff2');
+/* @import url('/assets/fonts/TextMeOne.woff2'); */
+
+@font-face {
+  font-family: 'Text Me One';
+  src: url('/assets/fonts/TextMeOne.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carisma-400';
+  src: url('/assets/fonts/Carisma-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Carisma-600';
+  src: url('/assets/fonts/Carisma-600.woff2') format('woff2');
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -21,16 +36,62 @@
 
 body {
   color: var(--font-color);
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'Carisma-600', sans-serif;
 }
 
-h1{
+h1 {
   font-family: 'Text Me One', sans-serif;
   font-size: 6rem;
   line-height: .9;
+}
+
+h3 {
+  font-family: 'Carisma-400', 'Times New Roman', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.ananda-color {
+  border-radius: 50% 50% 0 0;
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.ananda-no-color {
+  /* border-radius: 50% 0 0 0; */
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  clip-path: ellipse(80% 100% at bottom);
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) grayscale(100%);
+  transition: all 0.3s;
+  pointer-events: visible;
+}
+
+.ananda-no-color:hover {
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)) grayscale(0%);
+}
+
+.ananda-no-color:active {
+  pointer-events: none;
+}
+
+.btn-primary {
+  background-color: var(--font-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--font-color-light);
+}
+
+@media screen and (min-width: 768px) {
+  h3{
+    font-size: 1.5rem;
+  }
+  
 }
