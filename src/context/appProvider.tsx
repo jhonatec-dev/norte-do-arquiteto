@@ -49,6 +49,7 @@ export default function AppProvider({ children }: any) {
   const toggleMode = () => {
     const newMode = mode === "light" ? "dark" : "light";
     setMode(newMode);
+    document.documentElement.style.setProperty("--back-scrollbar", newMode === "light" ? "#ffffff" : "#1e1e1e");
     saveToLS("themeMode", newMode);
   };
 

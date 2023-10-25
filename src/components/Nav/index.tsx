@@ -24,7 +24,7 @@ export default function NavBar() {
 
   const handleScroll = () => {
     console.log(window.scrollY);
-    if (window.scrollY > 200) {
+    if (window.scrollY > 50) {
       setShow(true);
     } else {
       setShow(false);
@@ -47,7 +47,7 @@ export default function NavBar() {
   return (
     <>
       <Paper className="NavBar">
-        <Slide direction="down" in={show} mountOnEnter unmountOnExit>
+        <Slide direction="down" in={show} timeout={300} unmountOnExit >
           <Stack
             spacing={2}
             direction={"row"}
@@ -98,19 +98,24 @@ export default function NavBar() {
         </IconButton>
         <Stack spacing={3} p={2} textAlign={"center"} alignItems={"center"}>
           <div
-            style={{ filter: " drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)" }}
+            style={{
+              filter:
+                " brightness(130%) drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)",
+            }}
           >
             <Logo />
           </div>
 
-          <Typography
-            variant="h1"
-            fontSize={"2.5rem"}
-            fontWeight={"bold"}
-            color={"rgba(255, 255, 255, 0.87)"}
-          >
-            NORTE DO ARQUITETO
-          </Typography>
+          <a href="#">
+            <Typography
+              variant="h1"
+              fontSize={"2.5rem"}
+              fontWeight={"bold"}
+              color={"rgba(255, 255, 255, 0.87)"}
+            >
+              NORTE DO ARQUITETO
+            </Typography>
+          </a>
           {navbarItems.map((item) => (
             <Button
               key={item.name}

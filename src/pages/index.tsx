@@ -1,7 +1,9 @@
 import About from "@/components/About";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Jobs from "@/components/Jobs";
 import NavBar from "@/components/Nav";
+import Prices from "@/components/Prices";
+import Projects from "@/components/Projects";
 import { AppContext } from "@/context/appProvider";
 import { Paper, Stack } from "@mui/material";
 import { useContext } from "react";
@@ -22,11 +24,13 @@ export default function Home() {
             <DarkMode htmlColor="#a6a6a6" />
           )}
         </Fab> */}
-      <Stack maxWidth={"1000px"} margin="0 auto" spacing={0}>
+      <Stack spacing={0}>
         <NavBar />
         <Header />
         <About />
-        <Jobs />
+        <Projects />
+        <Prices />
+        <Footer />
       </Stack>
     </Paper>
   );
