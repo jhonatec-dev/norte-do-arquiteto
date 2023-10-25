@@ -8,11 +8,11 @@ export const navbarItems = [
     href: "#projects",
   },
   {
+    name: "Preços",
+    href: "#prices",
+  },
+  {
     name: "Contato",
     href: "#contact",
   },
-  {
-    name: "Preços",
-    href: "#prices",
-  }
-]
+];

@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import NavBar from "@/components/Nav";
@@ -13,23 +14,13 @@ export default function Home() {
 
   return (
     <Paper sx={{ borderRadius: 0 }}>
-      {/* <Fab
-          className="theme-mode"
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          size="small"
-        >
-          {mode === "light" ? (
-            <LightMode />
-          ) : (
-            <DarkMode htmlColor="#a6a6a6" />
-          )}
-        </Fab> */}
       <Stack spacing={0}>
         <NavBar />
         <Header />
         <About />
         <Projects />
         <Prices />
+        <Contact />
         <Footer />
       </Stack>
     </Paper>
