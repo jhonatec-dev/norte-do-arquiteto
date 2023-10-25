@@ -1,5 +1,5 @@
 // import { Image } from "@mui/icons-material";
-import { Menu } from "@mui/icons-material";
+import { Close, DarkMode, LightMode, Menu } from "@mui/icons-material";
 import {
   Backdrop,
   Button,
@@ -10,12 +10,17 @@ import {
   Typography,
 } from "@mui/material";
 
-import { useEffect, useState } from "react";
+import { AppContext } from "@/context/appProvider";
+import { navbarItems } from "@/utils/navbarItems";
+import { useContext, useEffect, useState } from "react";
 import Logo from "./Logo";
 
 export default function NavBar() {
   const [show, setShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const { theme, toggleMode } = useContext(AppContext);
+
+  const { mode } = theme.palette;
 
   const handleScroll = () => {
     console.log(window.scrollY);
@@ -33,6 +38,11 @@ export default function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleThemeButtonClick = (e: any) => {
+    e.stopPropagation();
+    toggleMode();
+  };
 
   return (
     <>
@@ -70,11 +80,29 @@ export default function NavBar() {
       <Backdrop
         open={showMenu}
         onClick={() => setShowMenu(false)}
-        sx={{ zIndex: 9999, backdropFilter: "blur(4px)", top: 0, margin: 0 }}
+        sx={{
+          zIndex: 9999,
+          backdropFilter: "blur(4px)",
+          top: 0,
+          margin: 0,
+          color: "whitesmoke",
+        }}
       >
-        <Stack spacing={3} p={2} textAlign={"center"}  alignItems={"center"}>
-          <div style={{filter: " drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)"}}><Logo /></div>
-          
+        <IconButton
+          color="inherit"
+          onClick={() => setShowMenu(false)}
+          sx={{ position: "absolute", top: 0, right: 0, margin: 2 }}
+          size="large"
+        >
+          <Close />
+        </IconButton>
+        <Stack spacing={3} p={2} textAlign={"center"} alignItems={"center"}>
+          <div
+            style={{ filter: " drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)" }}
+          >
+            <Logo />
+          </div>
+
           <Typography
             variant="h1"
             fontSize={"2.5rem"}
@@ -83,18 +111,25 @@ export default function NavBar() {
           >
             NORTE DO ARQUITETO
           </Typography>
-          <Button variant="text" href="#about">
-            SOBRE MIM
-          </Button>
-          <Button variant="text" href="#jobs">
-            TRABALHOS EM DESTAQUE
-          </Button>
-          <Button variant="text" href="#prices">
-            TABELA DE PREÇOS
-          </Button>
-          <Button variant="text" href="#contact">
-            CONTATO
-          </Button>
+          {navbarItems.map((item) => (
+            <Button
+              key={item.name}
+              href={item.href}
+              color="inherit"
+              variant="outlined"
+              fullWidth
+            >
+              {item.name}
+            </Button>
+          ))}
+
+          <IconButton color="inherit" onClick={handleThemeButtonClick}>
+            {mode === "dark" ? (
+              <DarkMode fontSize="large" />
+            ) : (
+              <LightMode htmlColor="" fontSize="large" />
+            )}
+          </IconButton>
         </Stack>
       </Backdrop>
     </>
