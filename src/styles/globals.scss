@@ -18,8 +18,6 @@
   src: url("/assets/fonts/Carisma-600.woff2") format("woff2");
 }
 
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -27,6 +25,8 @@
   --font-color: #737373;
   --font-color-light: #a6a6a6;
   --padding-top: 95px;
+  --back-scrollbar: #1e1e1e;
+  --thumb-scrollbar: #414141;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,14 +39,13 @@
 
 /* Scroll Bar */
 ::-webkit-scrollbar {
-  background: rgb(var(--background-start-rgb));
+  background: var(--back-scrollbar);
   transition: all 300ms;
   width: 8px;
 }
 
-
 ::-webkit-scrollbar-thumb {
-  background: #414141;
+  background: var(--thumb-scrollbar);
   border-radius: 1ex;
 }
 
@@ -54,18 +53,12 @@
   background: rgb(var(--foreground-rgb));
 }
 
-::-webkit-scrollbar-corner {
-  background: #e30000;
-}
-
-
 html {
   scroll-behavior: smooth;
   scrollbar-color: rgb(var(--foreground-rgb)) rgb(var(--background-end-rgb));
 }
 
 body {
-  
   font-family: "Carisma-600", sans-serif;
 }
 
@@ -74,13 +67,14 @@ h1 {
   /* font-size: 4.5rem !important; */
   line-height: 0.9 !important;
   font-weight: 500 !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.05em !important;
+  text-transform: none !important;
 }
 
 h2 {
   font-family: "Carisma-400", sans-serif !important;
   /* font-size: 3rem !important;*/
-  line-height: 0.75 !important;
+  line-height: 0.9 !important;
 }
 
 h3 {
@@ -95,11 +89,15 @@ p {
   line-height: 1.4 !important;
 }
 
+.Container {
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: var(--padding-top);
+}
+
 .Header {
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  padding-bottom: 60px !important;
 }
 
 .NavBar {
@@ -109,6 +107,20 @@ p {
   top: 0;
   left: 0;
   opacity: 0.9;
+}
+
+.Section {
+  // transform: scaleX(2);
+}
+
+.About {
+  p {
+    font-size: 1.1rem;
+    /* white-space: pre-wrap; */
+    width: inherit;
+    line-height: 1.125;
+    text-align: initial;
+  }
 }
 
 .ananda-color {
@@ -142,7 +154,7 @@ p {
   pointer-events: none;
 } */
 
-.theme-mode{
+.theme-mode {
   position: fixed !important;
   bottom: 0 !important;
   z-index: 999;
@@ -159,7 +171,7 @@ p {
 
 .font-light {
   color: var(--font-color-light);
-  display: block;
+  // display: block;
 }
 
 .align-self-start {
@@ -170,14 +182,10 @@ p {
   align-self: flex-end;
 }
 
-.About p {
-  font-size: 1.1rem;
-  /* white-space: pre-wrap; */
-  width: inherit;
-  line-height: 1.125;
-  text-align: initial;
+.Footer {
+  text-align: center;
+  padding: 40px;
 }
-
 @media screen and (min-width: 768px) {
   h3 {
     font-size: 1.5rem;
