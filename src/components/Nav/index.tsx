@@ -4,6 +4,7 @@ import {
   Backdrop,
   Button,
   IconButton,
+  Paper,
   Slide,
   Stack,
   Typography,
@@ -35,7 +36,7 @@ export default function NavBar() {
 
   return (
     <>
-      <div className="FloatingHeader">
+      <Paper className="NavBar">
         <Slide direction="down" in={show} mountOnEnter unmountOnExit>
           <Stack
             spacing={2}
@@ -65,7 +66,7 @@ export default function NavBar() {
             </IconButton>
           </Stack>
         </Slide>
-      </div>
+      </Paper>
       <Backdrop
         open={showMenu}
         onClick={() => setShowMenu(false)}
