@@ -13,7 +13,7 @@ export const components = {
   MuiButton: {
     styleOverrides: {
       root: {
-        color: "rgba(255, 255, 255, 0.8)",
+        // color: "rgba(255, 255, 255, 0.8)",
       },
     },
   }

@@ -18,6 +18,8 @@
   src: url("/assets/fonts/Carisma-600.woff2") format("woff2");
 }
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -35,18 +37,35 @@
   }
 }
 
+/* Scroll Bar */
+::-webkit-scrollbar {
+  background: rgb(var(--background-start-rgb));
+  transition: all 300ms;
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #414141;
+  border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--foreground-rgb));
+}
+
+::-webkit-scrollbar-corner {
+  background: #e30000;
+}
+
+
 html {
   scroll-behavior: smooth;
+  scrollbar-color: rgb(var(--foreground-rgb)) rgb(var(--background-end-rgb));
 }
 
 body {
-  color: var(--font-color);
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  
   font-family: "Carisma-600", sans-serif;
 }
 
@@ -83,13 +102,12 @@ p {
   min-height: 100vh;
 }
 
-.FloatingHeader {
+.NavBar {
   z-index: 100;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background: rgb(var(--background-end-rgb));
   opacity: 0.9;
 }
 
@@ -123,6 +141,13 @@ p {
 /* .ananda-no-color:active {
   pointer-events: none;
 } */
+
+.theme-mode{
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  margin: 12px;
+}
 
 .btn-primary {
   background-color: var(--font-color);
