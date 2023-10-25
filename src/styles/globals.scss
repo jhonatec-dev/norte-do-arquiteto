@@ -4,18 +4,18 @@
 /* @import url('/assets/fonts/TextMeOne.woff2'); */
 
 @font-face {
-  font-family: 'Text Me One';
-  src: url('/assets/fonts/TextMeOne.woff2') format('woff2');
+  font-family: "Text Me One";
+  src: url("/assets/fonts/TextMeOne.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Carisma-400';
-  src: url('/assets/fonts/Carisma-400.woff2') format('woff2');
+  font-family: "Carisma-400";
+  src: url("/assets/fonts/Carisma-400.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Carisma-600';
-  src: url('/assets/fonts/Carisma-600.woff2') format('woff2');
+  font-family: "Carisma-600";
+  src: url("/assets/fonts/Carisma-600.woff2") format("woff2");
 }
 
 :root {
@@ -23,7 +23,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --font-color: #737373;
-  --font-color-light: #A6A6A6;
+  --font-color-light: #a6a6a6;
+  --padding-top: 95px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,35 +35,44 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--font-color);
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-  font-family: 'Carisma-600', sans-serif;
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: "Carisma-600", sans-serif;
 }
 
 h1 {
-  font-family: 'Text Me One', sans-serif !important;
-  font-size: 4.5rem !important;
-  line-height: .9 !important;
+  font-family: "Text Me One", sans-serif !important;
+  /* font-size: 4.5rem !important; */
+  line-height: 0.9 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
 }
 
 h2 {
-  font-family: 'Carisma-400', sans-serif !important;
-  font-size: 3rem !important;
-  line-height: .75 !important;
+  font-family: "Carisma-400", sans-serif !important;
+  /* font-size: 3rem !important;*/
+  line-height: 0.75 !important;
 }
 
 h3 {
-  font-family: 'Carisma-400', sans-serif !important;
-  font-size: 1.75rem !important;
+  font-family: "Carisma-400", sans-serif !important;
+  // font-size: 1.75rem !important;
   line-height: 1 !important;
 }
 
 p {
-  font-family: 'Carisma-600', sans-serif !important;
-  font-size: 1.2rem !important;
+  font-family: "Carisma-600", sans-serif !important;
+  font-size: 1rem !important;
   line-height: 1.4 !important;
 }
 
@@ -70,12 +80,17 @@ p {
   text-align: center;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  width: 100vw;
-  left: 0;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 100vh;
+}
+
+.FloatingHeader {
   z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(var(--background-end-rgb));
+  opacity: 0.9;
 }
 
 .ananda-color {
@@ -88,7 +103,6 @@ p {
   transition: all 0.3s;
   pointer-events: none;
 }
-
 
 .ananda-no-color {
   /* border-radius: 50% 0 0 0; */
@@ -120,7 +134,7 @@ p {
 
 .font-light {
   color: var(--font-color-light);
-  /* display: block; */
+  display: block;
 }
 
 .align-self-start {
@@ -143,5 +157,4 @@ p {
   h3 {
     font-size: 1.5rem;
   }
-
 }
