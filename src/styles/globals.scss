@@ -83,6 +83,14 @@ h3 {
   line-height: 1 !important;
 }
 
+h5{
+  font-family: "Carisma-600", sans-serif !important;
+  font-size: 1.5rem !important;
+  text-transform: uppercase;
+  line-height: 1 !important;
+  padding: 12px 0;
+}
+
 p {
   font-family: "Carisma-600", sans-serif !important;
   font-size: 1rem !important;
@@ -120,6 +128,25 @@ p {
     width: inherit;
     line-height: 1.125;
     text-align: initial;
+  }
+}
+
+.Prices {
+
+  .price-title{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: block;
+    line-height: 0.8;
+  }
+
+  .price-value{
+    font-size: 1.125rem;
+    font-family: "Carisma-400", sans-serif;
+    text-transform: uppercase;
+    display: block;
+    line-height: 1;
+    margin: 12px 0;
   }
 }
 

@@ -1,4 +1,4 @@
-import { projects } from "@/assets/projects/list";
+import { projects } from "@/data/list";
 import styles from "@/styles/Responsive.module.css";
 import { Stack, Typography } from "@mui/material";
 import { Carousel } from "react-responsive-carousel";

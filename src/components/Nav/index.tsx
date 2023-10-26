@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 
 import { AppContext } from "@/context/appProvider";
-import { navbarItems } from "@/utils/navbarItems";
+import { navbarItems } from "@/data/navbarItems";
 import { useContext, useEffect, useState } from "react";
 import Logo from "./Logo";
 
