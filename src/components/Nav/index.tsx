@@ -23,7 +23,7 @@ export default function NavBar() {
   const { mode } = theme.palette;
 
   const handleScroll = () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 50) {
       setShow(true);
     } else {

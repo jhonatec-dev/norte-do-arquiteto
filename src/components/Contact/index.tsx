@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <Stack className="Container Contact" id="contact">
       <Typography variant="h2" textAlign={"center"}>
-        Contato
+        Entre em <span className="font-light">contato</span>
       </Typography>
     </Stack>
   );

@@ -1,10 +1,10 @@
+import { projects } from "@/assets/projects/list";
 import styles from "@/styles/Responsive.module.css";
 import { Stack, Typography } from "@mui/material";
-import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-const array = [0, 1, 2, 3, 4];
+
 
 export default function Projects() {
   return (
@@ -12,46 +12,42 @@ export default function Projects() {
       <Typography variant="h2" textAlign={"center"}>
         Projetos <span className="font-light">destaque</span>
       </Typography>
-      <div className={styles.container}>
+      <Stack>
         <Carousel
           // showArrows={false}
           showIndicators={true}
           infiniteLoop={true}
-          autoPlay={true}
+          // autoPlay={true}
           transitionTime={800}
           interval={3000}
-          dynamicHeight={false}
+          dynamicHeight={true}
           className={styles.mySwiper}
           showStatus={false}
-          showThumbs={true}
+          swipeable={true}
+          emulateTouch={true}
         >
-          {array.map((item) => (
-            <div key={item} className={styles.swipItem}>
+          {projects.map((project, index) => (
+            <div key={index} className={styles.swipItem}>
               <div className={styles.imgBox}>
-                <Image
-                  src={"/assets/images/01.jpeg"}
+                {/* <Image
+                  src={project.img}
                   alt="slides"
                   width={500}
                   height={500}
-                />
+                /> */}
+                <video src={project.video} controls muted loop />
               </div>
               <div className={styles.detail}>
-                <h2>titulo</h2>
-                <p style={{ padding: "10px", marginBottom: "20px" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Inventore animi incidunt quasi, nesciunt deleniti nihil quas
-                  illo laborum numquam distinctio perferendis debitis maiores
-                  ex? Ab id fuga deleniti ratione error. sfsdf dfssfdf dsdfds
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore natus delectus dignissimos accusantium dolor eaque
-                  libero consequatur pariatur quis quia vero recusandae optio
-                  odit quisquam quas, iusto minus. Temporibus, quas!
-                </p>
+                <h2>{project.titulo}</h2>
+                <p>Projetista: {project.projetista}</p>
+                <p>Modelagem: {project.modelagem}</p>
+                <p>Render: {project.render}</p>
+                <div style={{padding: "10px"}}></div>
               </div>
             </div>
           ))}
         </Carousel>
-      </div>
+      </Stack>
     </Stack>
   );
 }
