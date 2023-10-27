@@ -7,22 +7,28 @@ import Prices from "@/components/Prices";
 import Projects from "@/components/Projects";
 import { AppContext } from "@/context/appProvider";
 import { Paper, Stack } from "@mui/material";
+import Head from "next/head";
 import { useContext } from "react";
 
 export default function Home() {
   const {} = useContext(AppContext);
 
   return (
-    <Paper sx={{ borderRadius: 0 }}>
-      <Stack spacing={0}>
-        <NavBar />
-        <Header />
-        <About />
-        <Projects />
-        <Prices />
-        <Contact />
-        <Footer />
-      </Stack>
-    </Paper>
+    <>
+      <Head>
+        <title>Norte do Arquiteto</title>
+      </Head>
+      <Paper sx={{ borderRadius: 0 }}>
+        <Stack spacing={0}>
+          <NavBar />
+          <Header />
+          <About />
+          <Projects />
+          <Prices />
+          <Contact />
+          <Footer />
+        </Stack>
+      </Paper>
+    </>
   );
 }
