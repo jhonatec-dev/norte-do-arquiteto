@@ -32,7 +32,7 @@ export default function Projects() {
       </Typography>
       {hasWindow && (
         <ReactPlayer
-          light
+          light={"/assets/images/projects/01.jpeg"}
           url="https://www.youtube.com/watch?v=uthJhzkKgc8"
           controls={!screenfull.isEnabled}
           playing={true}

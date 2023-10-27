@@ -63,22 +63,22 @@ export default function Contact() {
           </Button>
         </Stack>
         <Stack spacing={1}>
-          <Typography variant="h5" textAlign={"center"} pt={6}>
+          <Typography variant="h4" textAlign={"center"} pt={6}>
             Informações <span className="font-light">gerais</span>
           </Typography>
           {infos.map((info, index) => (
             <Box key={index} textAlign={"left"}>
               <Button
                 onClick={() => handleNewExpand(index)}
-                endIcon={expand[index] ? <ExpandLess /> : <ExpandMore />}
+                startIcon={expand[index] ? <ExpandLess /> : <ExpandMore />}
                 variant="text"
                 color="inherit"
                 size="large"
-                sx={{ width: "100%", textAlign: "left" }}
+                // fullWidth
               >
-                <Typography variant="h6">{info.title}</Typography>
+                <Typography variant="h5" textAlign={"left"}>{info.title}</Typography>
               </Button>
-              <Collapse in={expand[index]}>
+              <Collapse in={expand[index]} sx={{ paddingLeft: "20px" }}>
                 {info.description.map((desc, index) => (
                   <Typography
                     key={index}

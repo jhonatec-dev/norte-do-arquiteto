@@ -14,34 +14,31 @@ export default function Prices() {
         gap={4}
         className="Container Prices"
         id="prices"
-        justifyContent={"center"}
         alignItems={"center"}
+        // justifyContent={"space-evenly"}
       >
         <Typography variant="h2" textAlign={"center"}>
           Nossos <span className="font-light">preços</span>
         </Typography>
         <Stack
-          gap={10}
+          // gap={10}
           flexWrap={"wrap"}
           direction={"row"}
-          // justifyItems={"center"}
-          // justifyContent={"center"}
-          // alignItems={"stretch"}
-          // width={"100%"}
         >
-          <Stack flexGrow={1} spacing={1}>
+          <Stack flexGrow={1} spacing={1} alignItems={"flex-start"}>
             <Button
               onClick={() => setRender(!render)}
-              endIcon={render ? <ExpandLess /> : <ExpandMore />}
+              startIcon={render ? <ExpandLess  /> : <ExpandMore fontSize="large" />}
               variant="text"
               color="inherit"
+              size="large"
             >
-              <Typography variant="h5">
+              <Typography variant="h5" textAlign={"left"}>
                 Somente Render,{" "}
                 <span className="font-light block">preço por imagem</span>
               </Typography>
             </Button>
-            <Collapse in={render}>
+            <Collapse in={render} sx={{ paddingLeft: "20px" }}>
               {prices.map((price, index) => (
                 <Box key={index} padding={"10px 0"}>
                   <span className="price-title">{price.title}</span>
@@ -52,19 +49,20 @@ export default function Prices() {
               ))}
             </Collapse>
           </Stack>
-          <Stack flexGrow={1} spacing={1}>
+          <Stack flexGrow={1} spacing={1} alignItems={"flex-start"}>
             <Button
               onClick={() => setModelagem(!modelagem)}
-              endIcon={modelagem ? <ExpandLess /> : <ExpandMore />}
+              startIcon={modelagem ? <ExpandLess /> : <ExpandMore />}
               variant="text"
               color="inherit"
+              size="large"
             >
-              <Typography variant="h5">
+              <Typography variant="h5" textAlign={"left"}>
                 Modelagem e Render{" "}
                 <span className="font-light block">Render por imagem</span>
               </Typography>
             </Button>
-            <Collapse in={modelagem}>
+            <Collapse in={modelagem} sx={{ paddingLeft: "20px" }}>
               {prices.map((price, index) => (
                 <Box key={index} padding={"10px 0"}>
                   <span className="price-title">{price.title}</span>

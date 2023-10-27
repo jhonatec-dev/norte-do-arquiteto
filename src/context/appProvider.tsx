@@ -38,6 +38,13 @@ export default function AppProvider({ children }: any) {
           },
         },
       },
+      MuiStack: {
+        styleOverrides: {
+          root: {
+            marginLeft: "0 !important",
+          },
+        },
+      },
     },
   });
 
