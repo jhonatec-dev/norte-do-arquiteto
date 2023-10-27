@@ -40,6 +40,7 @@ export default function Projects() {
           style={{ flexGrow: 1 }}
           onPlay={playInFullScreen}
           onPause={exitFullScreen}
+          
         />
       )}
     </Stack>
