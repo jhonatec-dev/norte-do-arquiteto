@@ -45,18 +45,53 @@ export default function AppProvider({ children }: any) {
           },
         },
       },
+      MuiPaper: {
+        styleOverrides: {
+          root: {
+            backgroundColor: mode === "light" ? "#d9d9d9" : "#1e1e1e",
+            
+          },
+          elevation2: {
+            backgroundColor: mode === "light" ? "#e9e9e9" : "#232323",
+            boxShadow: "none",
+          },
+        },
+      },
     },
   });
 
   useEffect(() => {
     const themeMode = getFromLS("themeMode") || "light";
     setMode(themeMode);
+    document.documentElement.style.setProperty(
+      "--scrollbar-background",
+      `var(--background-${themeMode})`
+    );
+    document.documentElement.style.setProperty(
+      "--scrollbar-thumb",
+      `var(--thumb-${themeMode})`
+    );
+    document.documentElement.style.setProperty(
+      "--thumb-hover",
+      `var(--thumb-hover-${themeMode})`
+    );
   }, []);
 
   const toggleMode = () => {
     const newMode = mode === "light" ? "dark" : "light";
     setMode(newMode);
-    document.documentElement.style.setProperty("--back-scrollbar", newMode === "light" ? "#ffffff" : "#1e1e1e");
+    document.documentElement.style.setProperty(
+      "--scrollbar-background",
+      `var(--background-${newMode})`
+    );
+    document.documentElement.style.setProperty(
+      "--scrollbar-thumb",
+      `var(--thumb-${newMode})`
+    );
+    document.documentElement.style.setProperty(
+      "--thumb-hover",
+      `var(--thumb-hover-${newMode})`
+    );
     saveToLS("themeMode", newMode);
   };
 
