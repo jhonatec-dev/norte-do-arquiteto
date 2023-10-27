@@ -18,7 +18,13 @@ export default function Projects() {
   const playInFullScreen = () => {
     if (screenfull.isEnabled) {
       const element = document.getElementById("widget2");
-      screenfull.toggle(element);
+      if (element) screenfull.request(element);
+    }
+  };
+
+  const exitFullScreen = () => {
+    if (screenfull.isEnabled) {
+      screenfull.exit();
     }
   };
 
@@ -36,7 +42,7 @@ export default function Projects() {
           width={"100%"}
           style={{ flexGrow: 1 }}
           onPlay={playInFullScreen}
-          onPause={playInFullScreen}
+          onPause={exitFullScreen}
         />
       )}
     </Stack>
