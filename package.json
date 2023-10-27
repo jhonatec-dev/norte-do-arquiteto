@@ -20,7 +20,8 @@
     "react-player": "^2.13.0",
     "react-responsive-carousel": "^3.2.23",
     "sass": "^1.69.4",
-    "screenfull": "^6.0.2"
+    "screenfull": "^6.0.2",
+    "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@types/node": "^20",

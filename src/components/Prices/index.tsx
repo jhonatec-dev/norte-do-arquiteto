@@ -8,6 +8,10 @@ export default function Prices() {
   const [render, setRender] = useState(false);
   const [modelagem, setModelagem] = useState(false);
 
+  const buttonSX = {
+    backgroundColor: "transparent",
+  };
+
   return (
     <Paper elevation={2} className="Section">
       <Stack
@@ -28,10 +32,11 @@ export default function Prices() {
           <Stack flexGrow={1} spacing={1} alignItems={"flex-start"}>
             <Button
               onClick={() => setRender(!render)}
-              startIcon={render ? <ExpandLess  /> : <ExpandMore/>}
+              startIcon={render ? <ExpandLess /> : <ExpandMore />}
               variant="text"
               color="inherit"
               size="large"
+              sx={buttonSX}
             >
               <Typography variant="h5" textAlign={"left"}>
                 Somente Render,{" "}
@@ -56,6 +61,7 @@ export default function Prices() {
               variant="text"
               color="inherit"
               size="large"
+              sx={buttonSX}
             >
               <Typography variant="h5" textAlign={"left"}>
                 Modelagem e Render{" "}

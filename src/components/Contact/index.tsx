@@ -43,6 +43,10 @@ export default function Contact() {
         }
       : {};
 
+  const buttonSXInfo = {
+    backgroundColor: "transparent",
+  };
+
   const handleNewExpand = (index: number) => {
     const newExpand = [...expand];
     newExpand[index] = !newExpand[index];
@@ -104,7 +108,7 @@ export default function Contact() {
                 variant="text"
                 color="inherit"
                 size="large"
-                // fullWidth
+                sx={buttonSXInfo}
               >
                 <Typography variant="h5" textAlign={"left"}>
                   {info.title}
