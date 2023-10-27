@@ -1,12 +1,17 @@
 import { prices } from "@/data/prices";
 import { formatNumberToReal } from "@/utils/format";
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { Box, Button, Collapse, Paper, Stack, Typography } from "@mui/material";
+import { useState } from "react";
 
 export default function Prices() {
+  const [render, setRender] = useState(false);
+  const [modelagem, setModelagem] = useState(false);
+
   return (
     <Paper elevation={2} className="Section">
       <Stack
-        spacing={4}
+        gap={4}
         className="Container Prices"
         id="prices"
         justifyContent={"center"}
@@ -16,7 +21,7 @@ export default function Prices() {
           Nossos <span className="font-light">preços</span>
         </Typography>
         <Stack
-          gap={3}
+          gap={10}
           flexWrap={"wrap"}
           direction={"row"}
           // justifyItems={"center"}
@@ -25,36 +30,54 @@ export default function Prices() {
           // width={"100%"}
         >
           <Stack flexGrow={1} spacing={1}>
-            <Typography variant="h5">
-              Somente Render,{" "}
-              <span className="font-light block">preço por imagem</span>
-            </Typography>
-            {prices.map((price, index) => (
-              <Box key={index} padding={"10px 0"}>
-                <span className="price-title">{price.title}</span>
-                <span className="price-value">
-                  a partir de {formatNumberToReal(price.render)}
-                </span>
-              </Box>
-            ))}
+            <Button
+              onClick={() => setRender(!render)}
+              endIcon={render ? <ExpandLess /> : <ExpandMore />}
+              variant="text"
+              color="inherit"
+            >
+              <Typography variant="h5">
+                Somente Render,{" "}
+                <span className="font-light block">preço por imagem</span>
+              </Typography>
+            </Button>
+            <Collapse in={render}>
+              {prices.map((price, index) => (
+                <Box key={index} padding={"10px 0"}>
+                  <span className="price-title">{price.title}</span>
+                  <span className="price-value">
+                    a partir de {formatNumberToReal(price.render)}
+                  </span>
+                </Box>
+              ))}
+            </Collapse>
           </Stack>
           <Stack flexGrow={1} spacing={1}>
-            <Typography variant="h5">
-              Modelagem e Render{" "}
-              <span className="font-light block">Render por imagem</span>
-            </Typography>
-
-            {prices.map((price, index) => (
-              <Box key={index} padding={"10px 0"}>
-                <span className="price-title">{price.title}</span>
-                <span className="price-value">
-                  a partir de {formatNumberToReal(price.modelagem)} modelagem
-                </span>
-                <span className="price-value">
-                  + {formatNumberToReal(price.render)} por imagem render
-                </span>
-              </Box>
-            ))}
+            <Button
+              onClick={() => setModelagem(!modelagem)}
+              endIcon={modelagem ? <ExpandLess /> : <ExpandMore />}
+              variant="text"
+              color="inherit"
+              
+            >
+              <Typography variant="h5">
+                Modelagem e Render{" "}
+                <span className="font-light block">Render por imagem</span>
+              </Typography>
+            </Button>
+            <Collapse in={modelagem}>
+              {prices.map((price, index) => (
+                <Box key={index} padding={"10px 0"}>
+                  <span className="price-title">{price.title}</span>
+                  <span className="price-value">
+                    a partir de {formatNumberToReal(price.modelagem)} modelagem
+                  </span>
+                  <span className="price-value">
+                    + {formatNumberToReal(price.render)} por imagem render
+                  </span>
+                </Box>
+              ))}
+            </Collapse>
           </Stack>
         </Stack>
       </Stack>
