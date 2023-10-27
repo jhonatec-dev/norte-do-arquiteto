@@ -65,7 +65,7 @@ export default function Prices() {
             >
               <Typography variant="h5" textAlign={"left"}>
                 Modelagem e Render{" "}
-                <span className="font-light block">Render por imagem</span>
+                <span className="font-light block">Preço do Render por imagem</span>
               </Typography>
             </Button>
             <Collapse in={modelagem} sx={{ paddingLeft: "20px" }}>
