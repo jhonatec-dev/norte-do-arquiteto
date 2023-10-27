@@ -5,7 +5,14 @@ import {
   ExpandMore,
   WhatsApp,
 } from "@mui/icons-material";
-import { Box, Button, Collapse, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Collapse,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -16,6 +23,25 @@ const statusInfo = infos.map(() => false);
 
 export default function Contact() {
   const [expand, setExpand] = useState(statusInfo);
+  const {
+    palette: { mode },
+  } = useTheme();
+
+  const buttonSX =
+    mode === "light"
+      ? {
+          "& .MuiSvgIcon-root": {
+            color: "#e3e3e3",
+            transition: "all 0.3s",
+          },
+
+          "&:hover": {
+            "& .MuiSvgIcon-root": {
+              color: "#545454",
+            },
+          },
+        }
+      : {};
 
   const handleNewExpand = (index: number) => {
     const newExpand = [...expand];
@@ -45,10 +71,12 @@ export default function Contact() {
           />
           <Button
             variant="contained"
-            color="inherit"
+            // color="inherit"
             href={URL}
             target="_blank"
             startIcon={<WhatsApp />}
+            size="large"
+            sx={buttonSX as any}
           >
             WhatsApp
           </Button>
@@ -58,6 +86,8 @@ export default function Contact() {
             href={"mailto:contato@nortedoarquiteto.com.br"}
             target="_blank"
             startIcon={<EmailOutlined />}
+            size="large"
+            sx={buttonSX as any}
           >
             E-mail
           </Button>
@@ -76,7 +106,9 @@ export default function Contact() {
                 size="large"
                 // fullWidth
               >
-                <Typography variant="h5" textAlign={"left"}>{info.title}</Typography>
+                <Typography variant="h5" textAlign={"left"}>
+                  {info.title}
+                </Typography>
               </Button>
               <Collapse in={expand[index]} sx={{ paddingLeft: "20px" }}>
                 {info.description.map((desc, index) => (

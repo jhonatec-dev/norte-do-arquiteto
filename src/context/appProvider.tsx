@@ -16,6 +16,10 @@ export default function AppProvider({ children }: any) {
   const theme = createTheme({
     palette: {
       mode,
+      text: {
+        primary: mode === "light" ? "#545454" : "#e3e3e3",
+        // secondary: mode === "light" ? "#b7b7b7" : "#6c6c6c",
+      },
     },
     components: {
       MuiBackdrop: {
@@ -34,10 +38,25 @@ export default function AppProvider({ children }: any) {
       MuiButton: {
         styleOverrides: {
           root: {
-            color: "error",
+            backgroundColor: mode === "light" ? "#737373" : "#424242",
+            color: mode === "light" ? "#d9d9d9" : "#e3e3e3",
+            fontFamily: "Carisma-400",
+            // textTransform: "none",
+            fontSize: "1.2rem",
+            "&:hover": {
+              backgroundColor: mode === "light" ? "#b7b7b7" : "#6c6c6c",
+              color: mode === "light" ? "#545454" : "#e3e3e3",
+              "&:icon": {
+                color: mode === "light" ? "#000" : "#000",
+              },
+            },
+            "& .MuiSvgIcon-root": {
+              color: mode === "light" ? "#545454" : "#e3e3e3",
+            },
           },
         },
       },
+
       MuiStack: {
         styleOverrides: {
           root: {
@@ -49,11 +68,20 @@ export default function AppProvider({ children }: any) {
         styleOverrides: {
           root: {
             backgroundColor: mode === "light" ? "#d9d9d9" : "#1e1e1e",
-            
           },
           elevation2: {
             backgroundColor: mode === "light" ? "#e9e9e9" : "#232323",
             boxShadow: "none",
+          },
+        },
+      },
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            fontFamily: "Carisma-400",
+          },
+          h5: {
+            color: mode === "light" ? "#545454" : "#e3e3e3",
           },
         },
       },

@@ -31,7 +31,7 @@ export default function Header() {
         <Typography variant="h3" fontSize={"2rem"}>
           Portfólio de imagens realistas 3D
         </Typography>
-        <Button variant="contained" href="#about" color="inherit">
+        <Button variant="contained" href="#about" color="primary">
           Saiba mais
         </Button>
       </Stack>

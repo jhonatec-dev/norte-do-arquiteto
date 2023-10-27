@@ -28,7 +28,7 @@ export default function Prices() {
           <Stack flexGrow={1} spacing={1} alignItems={"flex-start"}>
             <Button
               onClick={() => setRender(!render)}
-              startIcon={render ? <ExpandLess  /> : <ExpandMore fontSize="large" />}
+              startIcon={render ? <ExpandLess  /> : <ExpandMore/>}
               variant="text"
               color="inherit"
               size="large"
