@@ -1,5 +1,10 @@
 // import { Image } from "@mui/icons-material";
-import { Close, DarkMode, LightMode, Menu } from "@mui/icons-material";
+import {
+  Close,
+  DarkMode,
+  LightMode,
+  Menu
+} from "@mui/icons-material";
 import {
   Backdrop,
   Button,
@@ -7,7 +12,7 @@ import {
   Paper,
   Slide,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
 
 import { AppContext } from "@/context/appProvider";
@@ -46,8 +51,20 @@ export default function NavBar() {
 
   return (
     <>
+      {/* {show && (
+        <Fab
+          color="inherit"
+          aria-label="add"
+          sx={{ position: "fixed", bottom: 16, right: 16 }}
+          href="#"
+          size="small"
+          // variant="extended"
+        >
+          <ArrowUpward fontSize="medium" />
+        </Fab>
+      )} */}
       <Paper className="NavBar">
-        <Slide direction="down" in={show} timeout={300} unmountOnExit >
+        <Slide direction="down" in={show} timeout={300} unmountOnExit>
           <Stack
             spacing={2}
             direction={"row"}

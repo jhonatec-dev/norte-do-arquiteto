@@ -58,7 +58,6 @@ export default function Prices() {
               endIcon={modelagem ? <ExpandLess /> : <ExpandMore />}
               variant="text"
               color="inherit"
-              
             >
               <Typography variant="h5">
                 Modelagem e Render{" "}
