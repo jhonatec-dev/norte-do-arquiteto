@@ -103,6 +103,10 @@ export default function AppProvider({ children }: any) {
       "--thumb-hover",
       `var(--thumb-hover-${themeMode})`
     );
+    document.documentElement.style.setProperty(
+      "--font-color-light",
+      `var(--font-color-highlight-${themeMode})`
+    );
   }, []);
 
   const toggleMode = () => {
@@ -119,6 +123,10 @@ export default function AppProvider({ children }: any) {
     document.documentElement.style.setProperty(
       "--thumb-hover",
       `var(--thumb-hover-${newMode})`
+    );
+    document.documentElement.style.setProperty(
+      "--font-color-light",
+      `var(--font-color-highlight-${newMode})`
     );
     saveToLS("themeMode", newMode);
   };

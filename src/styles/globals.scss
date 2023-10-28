@@ -22,7 +22,9 @@
   --background-light: #d9d9d9;
   --background-dark: #1e1e1e;
   --font-color: #737373;
-  --font-color-light: #a6a6a6;
+  --font-color-highlight-light: #8a8a8a;
+  --font-color-highlight-dark: #aaa9a9;
+  --font-color-light: var(--font-color-highlight-light);
   --padding-top: 95px;
   --scrollbar-background: var(--background-light);
   --thumb-light: #a6a6a6;
