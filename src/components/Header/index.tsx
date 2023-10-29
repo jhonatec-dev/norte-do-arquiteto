@@ -17,6 +17,7 @@ export default function Header() {
         alt="logo"
         width={200}
         height={200}
+        className="logo"
       />
       <Stack
         spacing={2}

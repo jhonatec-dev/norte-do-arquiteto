@@ -216,16 +216,23 @@ p {
   padding-bottom: 20px;
 }
 
-
-.react-player__play-icon{
+.react-player__play-icon {
   transform: scale(2);
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1));
   opacity: 0.8;
 }
 
+.Section {
+  animation: appear 1ms ease-in-out;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 40%;
+}
 
-@media screen and (min-width: 768px) {
-  h3 {
-    font-size: 1.5rem;
+@keyframes appear {
+  from {
+    filter: blur(10px);
+  }
+
+  to {
   }
 }
